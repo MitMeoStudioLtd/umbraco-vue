@@ -5,25 +5,27 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 import VueCookie from 'vue-cookie';
 
-// import umbraco from '@/umbraco.json';
-import http from '@/plugins/http';
 import umbraco from '@/plugins/umbraco';
+import http from '@/plugins/http';
 
 Vue.use(VueCookie);
 Vue.use(umbraco);
 Vue.use(http);
 
 export default {
-  name: "umbraco-admin",
-  // created() {
-  //   //Replicate Umbraco auth cookies so we can call the APIs.
-  //   Object.keys(umbraco).forEach(x => {
-  //     this.$cookie.set(x, umbraco[x]);
-  //   })
-  // }
+  name: 'umbraco-admin',
+  created() {
+    // Replicate Umbraco auth cookies so we can call the APIs.
+    // TODO: Check ENV first i.e don't replicate on production
+    Object.keys(umbraco).forEach(x => {
+      if (x.indexOf('UMB') >= 0) {
+        this.$cookie.set(x, umbraco[x]);
+      }
+    });
+  },
 };
 </script>
 

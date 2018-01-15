@@ -8,13 +8,12 @@
 export default {
   name: 'dasboard',
   created() {
+    //https://hugh-umbraco.azurewebsites.net/umbraco/backoffice/UmbracoApi/Dashboard/GetDashboard?section=content
     //https://hugh-umbraco.azurewebsites.net/umbraco/backoffice/UmbracoTrees/ApplicationTree/GetApplicationTrees?application=content&tree=&isDialog=false
-    this.$http
-      .get(
-        'umbraco/backoffice/UmbracoTrees/ApplicationTree/GetApplicationTrees?application=content',
-      )
-      .then(resp => {
-        console.log(resp);
+    //https://hugh-umbraco.azurewebsites.net/umbraco/backoffice/UmbracoApi/Section/GetSections
+    this.$umbraco.BO.get('UmbracoApi/Section/GetSections')
+      .then(res => {
+        console.log(res);
       })
       .catch(err => {
         console.log(err);
