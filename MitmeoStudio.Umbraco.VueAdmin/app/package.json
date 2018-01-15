@@ -1,0 +1,26 @@
+{
+  "name": "mitmeostudio.umbraco.vue-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "poi",
+    "build": "poi build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hugh Hoang <hugh.hoang@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "node-sass": "^4.7.2",
+    "poi": "^9.6.12",
+    "sass-loader": "^6.0.6",
+    "vue-axios": "^2.0.2",
+    "vue-cookie": "^1.1.4",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  }
+}
