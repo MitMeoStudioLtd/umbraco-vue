@@ -4,10 +4,6 @@ import App from '@/App';
 import store from '@/store';
 import router from '@/router';
 
-import VueCookie from 'vue-cookie';
-
-Vue.use(VueCookie);
-
 new Vue({
   el: '#app',
   components: {

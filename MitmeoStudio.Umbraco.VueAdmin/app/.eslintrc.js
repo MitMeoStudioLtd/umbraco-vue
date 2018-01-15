@@ -13,7 +13,7 @@ module.exports = {
       "no-console": 0,
       "linebreak-style": 0,
       "import/prefer-default-export": 0,
-      "import/no-extraneous-dependencies": 1,
+      "import/no-extraneous-dependencies": 0,
       "comma-dangle": 0,
       "arrow-parens": 0,
       "no-bitwise": 0

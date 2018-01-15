@@ -18,7 +18,6 @@
     "node-sass": "^4.7.2",
     "poi": "^9.6.12",
     "sass-loader": "^6.0.6",
-    "vue-axios": "^2.0.2",
     "vue-cookie": "^1.1.4",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

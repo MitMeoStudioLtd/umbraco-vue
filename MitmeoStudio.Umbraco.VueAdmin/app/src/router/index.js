@@ -7,8 +7,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
-      component: require('@/components/Shell').default,
+      name: 'dashboard',
+      component: require('@/components/Dashboard').default,
     },
     {
       path: '*',

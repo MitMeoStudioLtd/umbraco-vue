@@ -6,23 +6,24 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
-import VueAxios from "vue-axios";
-import umbCookies from '../umb-cookies.json';
+import VueCookie from 'vue-cookie';
 
-//Default header
-axios.defaults.headers.common['UMB-XSRF-TOKEN'] = umbCookies['UMB-XSRF-TOKEN'];
+// import umbraco from '@/umbraco.json';
+import http from '@/plugins/http';
+import umbraco from '@/plugins/umbraco';
 
-Vue.use(VueAxios, axios);
+Vue.use(VueCookie);
+Vue.use(umbraco);
+Vue.use(http);
 
 export default {
   name: "umbraco-admin",
-  created() {
-    //Replicate Umbraco auth cookies so we can call the APIs.
-    Object.keys(umbCookies).forEach(x => {
-      this.$cookie.set(x, umbCookies[x]);
-    })
-  }
+  // created() {
+  //   //Replicate Umbraco auth cookies so we can call the APIs.
+  //   Object.keys(umbraco).forEach(x => {
+  //     this.$cookie.set(x, umbraco[x]);
+  //   })
+  // }
 };
 </script>
 
