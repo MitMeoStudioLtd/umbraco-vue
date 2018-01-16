@@ -14,4 +14,4 @@ new Vue({
   },
   store,
   router
-})
+});

@@ -1,1 +1,2 @@
-
+export const LAYOUT_TITLE = 'LAYOUT_TITLE';
+export const LAYOUT_TOGGLE_DRAWER = 'LAYOUT_TOGGLE_DRAWER';
