@@ -1,25 +1,25 @@
-import { LAYOUT_TITLE, LAYOUT_TOGGLE_DRAWER } from '../types';
+import { LAYOUT_TITLE, LAYOUT_SHOW_DRAWER } from '../types';
 
 const state = {
   title: 'Dashboard',
-  showDrawer: false
+  drawer: false
 };
 
 const mutations = {
-  [LAYOUT_TITLE](state, { title }) {
+  [LAYOUT_TITLE](state, title) {
     state.title = title;
   },
-  [LAYOUT_TOGGLE_DRAWER](state) {
-    state.showDrawer = !state.showDrawer;
+  [LAYOUT_SHOW_DRAWER](state, show) {
+    state.drawer = show;
   }
 };
 
 const actions = {
-  setTitle({ commit }, { title }) {
-    if (state.title !== title) commit(LAYOUT_TITLE, { title });
+  setTitle({ commit }, title) {
+    if (state.title !== title) commit(LAYOUT_TITLE, title);
   },
-  toggleDrawer({ commit }) {
-    commit(LAYOUT_TOGGLE_DRAWER);
+  showDrawer({ commit }, show) {
+    if (state.drawer !== show) commit(LAYOUT_SHOW_DRAWER, show);
   }
 };
 

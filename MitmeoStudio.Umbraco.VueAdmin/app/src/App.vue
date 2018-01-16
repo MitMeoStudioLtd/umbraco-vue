@@ -1,8 +1,8 @@
 <template>
 <v-app id="umbraco-vue-admin">
-  <v-navigation-drawer app fixed :value="showDrawer"></v-navigation-drawer>
+  <navigation-drawer></navigation-drawer>
   <v-toolbar app dark color="secondary">
-    <v-toolbar-side-icon @click="toggleDrawer"></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click="showDrawer(true)"></v-toolbar-side-icon>
     <v-toolbar-title>{{title}}</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-btn icon>
@@ -23,7 +23,10 @@
       <router-view></router-view>
     </v-container>
   </v-content>
-  <v-footer app>Mitmeo Studio &copy; {{new Date().getFullYear()}}</v-footer>
+  <v-footer class="pa-3">
+    <v-spacer></v-spacer>
+    <div>Mitmeo Studio &copy; {{ new Date().getFullYear() }}</div>
+  </v-footer>
 </v-app>
 </template>
 
@@ -31,6 +34,8 @@
 import Vue from 'vue';
 import VueCookie from 'vue-cookie';
 import { mapState, mapActions } from 'vuex';
+
+import NavigationDrawer from '@/components/NavigationDrawer';
 
 import umbraco from '@/plugins/umbraco';
 import http from '@/plugins/http';
@@ -43,6 +48,9 @@ Vue.use(vuetify);
 
 export default {
   name: 'umbraco-admin',
+  components: {
+    [NavigationDrawer.name]: NavigationDrawer,
+  },
   data() {
     return {};
   },
@@ -56,10 +64,10 @@ export default {
     });
   },
   methods: {
-    ...mapActions('layout', ['toggleDrawer']),
+    ...mapActions('layout', ['showDrawer']),
   },
   computed: {
-    ...mapState('layout', ['title', 'showDrawer']),
+    ...mapState('layout', ['title']),
   },
 };
 </script>
