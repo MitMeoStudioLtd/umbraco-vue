@@ -32,19 +32,19 @@
 
 <script>
 import Vue from 'vue';
-import VueCookie from 'vue-cookie';
 import { mapState, mapActions } from 'vuex';
 
-import NavigationDrawer from '@/components/NavigationDrawer';
+import NavigationDrawer from '@/components/layout/NavigationDrawer';
 
 import umbraco from '@/plugins/umbraco';
 import http from '@/plugins/http';
 import vuetify from '@/plugins/vuetify';
+import icons from '@/plugins/icons';
 
-Vue.use(VueCookie);
 Vue.use(umbraco);
 Vue.use(http);
 Vue.use(vuetify);
+Vue.use(icons);
 
 export default {
   name: 'umbraco-admin',
@@ -54,15 +54,7 @@ export default {
   data() {
     return {};
   },
-  created() {
-    // Replicate Umbraco auth cookies so we can call the APIs.
-    // TODO: Check ENV first i.e don't replicate on production
-    Object.keys(umbraco).forEach(x => {
-      if (x.indexOf('UMB') >= 0) {
-        this.$cookie.set(x, umbraco[x]);
-      }
-    });
-  },
+  created() {},
   methods: {
     ...mapActions('layout', ['showDrawer']),
   },
