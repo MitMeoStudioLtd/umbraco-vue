@@ -23,12 +23,22 @@ namespace MitmeoStudio.Umbraco.VueAdmin
             GlobalConfiguration.Configuration.EnableCors(corsAttr);
 
             RouteTable.Routes.MapRoute(
-                name: "VueAdminRoute",
-                url: "App_Plugins/VueAdmin",
+                name: "VueAdminSpaRoute",
+                url: "App_Plugins/VueAdmin/app",
                 defaults: new
                 {
                     controller = "VueAdminSpa",
                     action = "Index"
+                },
+                namespaces: new string[] { "MitmeoStudio.Umbraco.VueAdmin.Controllers" }
+            );
+
+            RouteTable.Routes.MapRoute(
+                name: "VueAdminActionsRoute",
+                url: "VueAdmin/{action}",
+                defaults: new
+                {
+                    controller = "VueAdminSpa"
                 },
                 namespaces: new string[] { "MitmeoStudio.Umbraco.VueAdmin.Controllers" }
             );
