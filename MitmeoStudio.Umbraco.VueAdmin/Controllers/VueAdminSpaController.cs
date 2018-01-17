@@ -55,7 +55,8 @@ namespace MitmeoStudio.Umbraco.VueAdmin.Controllers
             }
             var url = $"{Request.Url.Scheme}://{host}";
 
-            if (Request.Url.Port != 80)
+            // Default ports don't need to append
+            if (Request.Url.Port != 80 && Request.Url.Port != 443)
             {
                 url += $":{Request.Url.Port}";
             }
