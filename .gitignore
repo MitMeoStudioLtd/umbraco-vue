@@ -264,3 +264,4 @@ node_modules
 dist
 Umbraco7/App_Data/**/*
 !Umbraco7/App_Data/Umbraco.sdf
+MitmeoStudio.Umbraco.VueAdmin/app/src/._umbraco.json

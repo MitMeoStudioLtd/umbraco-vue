@@ -32,17 +32,17 @@ export default {
   name: 'navigation-drawer',
   data() {
     return {
-      sections: [],
+      sections: []
     };
   },
   created() {
-    this.$umbraco.BO.get('UmbracoApi/Section/GetSections')
+    this.$umbraco.BO.getSections()
       .then(res => {
         this.sections = res;
         this.sections.unshift({
           name: 'Dashboard',
           alias: 'dashboard',
-          cssclass: 'dashboard',
+          cssclass: 'dashboard'
         });
       })
       .catch(err => {
@@ -54,7 +54,7 @@ export default {
     navigateTo(section) {
       this.setTitle(section.name);
       this.$router.push(section.alias);
-    },
+    }
   },
   computed: {
     show: {
@@ -63,9 +63,9 @@ export default {
       },
       set(val) {
         this.showDrawer(val);
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 
